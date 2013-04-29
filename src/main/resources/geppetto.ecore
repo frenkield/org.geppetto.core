@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="org.geppetto.model" nsPrefix="org.geppetto.model">
+  <eSubpackages name="values" nsURI="org.geppetto.model.values" nsPrefix="org.geppetto.model.values">
+    <eClassifiers xsi:type="ecore:EClass" name="AValue" abstract="true">
+      <eOperations name="getValueAsString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DoubleValue" eSuperTypes="#//values/AValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//values/AValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="StringValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="common" nsURI="org.geppetto.model.common" nsPrefix="org.geppetto.model.common">
+    <eClassifiers xsi:type="ecore:EClass" name="StateInstancePath">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="instancePath" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StateInstancePathToAValueMap" instanceClassName="java.util.Map$Entry">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//common/StateInstancePath"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+          eType="#//values/AValue"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StateSet">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+          eType="#//common/StateInstancePathToAValueMap" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ISimulator" abstract="true" interface="true">
+      <eOperations name="initialize">
+        <eParameters name="model" eType="#//common/IModel"/>
+      </eOperations>
+      <eOperations name="run" eType="#//common/StateSet">
+        <eParameters name="runConfiguration" eType="#//common/RunConfiguration"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IModel" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RunConfiguration">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="runLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
