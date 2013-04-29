@@ -39,5 +39,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="runLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ASimulator" abstract="true" eSuperTypes="#//common/ISimulator">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialized" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

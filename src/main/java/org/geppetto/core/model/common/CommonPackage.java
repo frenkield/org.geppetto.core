@@ -227,6 +227,35 @@ public interface CommonPackage extends EPackage
 
 
 	/**
+	 * The meta object id for the '{@link org.geppetto.core.model.common.impl.ASimulatorImpl <em>ASimulator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.geppetto.core.model.common.impl.ASimulatorImpl
+	 * @see org.geppetto.core.model.common.impl.CommonPackageImpl#getASimulator()
+	 * @generated
+	 */
+	int ASIMULATOR = 6;
+
+	/**
+	 * The feature id for the '<em><b>Initialized</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASIMULATOR__INITIALIZED = ISIMULATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>ASimulator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASIMULATOR_FEATURE_COUNT = ISIMULATOR_FEATURE_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.geppetto.core.model.common.StateInstancePath <em>State Instance Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,6 +382,27 @@ public interface CommonPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getRunConfiguration_RunLength();
+
+	/**
+	 * Returns the meta object for class '{@link org.geppetto.core.model.common.ASimulator <em>ASimulator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ASimulator</em>'.
+	 * @see org.geppetto.core.model.common.ASimulator
+	 * @generated
+	 */
+	EClass getASimulator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.geppetto.core.model.common.ASimulator#isInitialized <em>Initialized</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initialized</em>'.
+	 * @see org.geppetto.core.model.common.ASimulator#isInitialized()
+	 * @see #getASimulator()
+	 * @generated
+	 */
+	EAttribute getASimulator_Initialized();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -484,6 +534,24 @@ public interface CommonPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute RUN_CONFIGURATION__RUN_LENGTH = eINSTANCE.getRunConfiguration_RunLength();
+
+		/**
+		 * The meta object literal for the '{@link org.geppetto.core.model.common.impl.ASimulatorImpl <em>ASimulator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.geppetto.core.model.common.impl.ASimulatorImpl
+		 * @see org.geppetto.core.model.common.impl.CommonPackageImpl#getASimulator()
+		 * @generated
+		 */
+		EClass ASIMULATOR = eINSTANCE.getASimulator();
+
+		/**
+		 * The meta object literal for the '<em><b>Initialized</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASIMULATOR__INITIALIZED = eINSTANCE.getASimulator_Initialized();
 
 	}
 

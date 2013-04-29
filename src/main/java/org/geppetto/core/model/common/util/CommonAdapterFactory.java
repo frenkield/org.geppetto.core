@@ -108,6 +108,11 @@ public class CommonAdapterFactory extends AdapterFactoryImpl
 				return createRunConfigurationAdapter();
 			}
 			@Override
+			public Adapter caseASimulator(ASimulator object)
+			{
+				return createASimulatorAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object)
 			{
 				return createEObjectAdapter();
@@ -215,6 +220,21 @@ public class CommonAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createRunConfigurationAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.geppetto.core.model.common.ASimulator <em>ASimulator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.geppetto.core.model.common.ASimulator
+	 * @generated
+	 */
+	public Adapter createASimulatorAdapter()
 	{
 		return null;
 	}

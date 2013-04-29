@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.geppetto.core.model.common.ASimulator;
 import org.geppetto.core.model.common.CommonFactory;
 import org.geppetto.core.model.common.CommonPackage;
 import org.geppetto.core.model.common.IModel;
@@ -73,6 +74,13 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage
 	 * @generated
 	 */
 	private EClass runConfigurationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass aSimulatorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -267,6 +275,26 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getASimulator()
+	{
+		return aSimulatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getASimulator_Initialized()
+	{
+		return (EAttribute)aSimulatorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public CommonFactory getCommonFactory()
 	{
 		return (CommonFactory)getEFactoryInstance();
@@ -309,6 +337,9 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage
 		runConfigurationEClass = createEClass(RUN_CONFIGURATION);
 		createEAttribute(runConfigurationEClass, RUN_CONFIGURATION__TIME_STEP);
 		createEAttribute(runConfigurationEClass, RUN_CONFIGURATION__RUN_LENGTH);
+
+		aSimulatorEClass = createEClass(ASIMULATOR);
+		createEAttribute(aSimulatorEClass, ASIMULATOR__INITIALIZED);
 	}
 
 	/**
@@ -343,6 +374,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		aSimulatorEClass.getESuperTypes().add(this.getISimulator());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(stateInstancePathEClass, StateInstancePath.class, "StateInstancePath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -368,6 +400,9 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage
 		initEClass(runConfigurationEClass, RunConfiguration.class, "RunConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRunConfiguration_TimeStep(), ecorePackage.getEDouble(), "timeStep", null, 0, 1, RunConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRunConfiguration_RunLength(), ecorePackage.getEDouble(), "runLength", null, 0, 1, RunConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(aSimulatorEClass, ASimulator.class, "ASimulator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getASimulator_Initialized(), ecorePackage.getEBoolean(), "initialized", null, 0, 1, ASimulator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
