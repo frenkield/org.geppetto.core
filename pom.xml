@@ -55,6 +55,13 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
+				<dependency>
+			<groupId>net.jpountz</groupId>
+			<artifactId>lz4-java</artifactId>
+			<version>1.2</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/lz4-1.2-SNAPSHOT.jar</systemPath>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<repository>

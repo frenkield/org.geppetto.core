@@ -33,8 +33,10 @@
 
 package org.geppetto.core.simulation;
 
+import org.geppetto.core.common.GeppettoExecutionException;
+
 public interface ISimulationCallbackListener
 {
-	void updateReady(String sceneUpdate, String variableWatchTree);
+	void updateReady(String sceneUpdate, String variableWatchTree) throws GeppettoExecutionException;
 
 }
