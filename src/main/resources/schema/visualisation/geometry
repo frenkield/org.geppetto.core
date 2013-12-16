@@ -4,6 +4,6 @@
 	"javaType" : "org.geppetto.core.visualisation.model.AGeometry",
 	"properties": {
 		"id": { "type": "string" , "required": true },
-		"position": { "$ref" : "point", "required": true }
+		"p": { "$ref" : "point", "required": true }
 	}
 }
