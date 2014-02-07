@@ -102,6 +102,10 @@ public interface ISimulation {
 	 * */
 	VariableList listForceableVariables();
 	
+	int getSimulatorCapacity(); 
+	
+	String getSimulatorName();
+	
 	/**
 	 * Sets variables to be watched
 	 * @throws GeppettoExecutionException 
@@ -113,7 +117,10 @@ public interface ISimulation {
 	 * */
 	void startWatch();
 	
+	
 	/**
+	 * Number of connections allowed on simulation
+	 *
 	 * Starts recording watched variables values 
 	 * */
 	void stopWatch();
@@ -127,4 +134,6 @@ public interface ISimulation {
 	 * Gets existing watch lists  
 	 * */
 	List<WatchList> getWatchLists();
+	
+	List<URL> getScripts();	
 }

@@ -31,38 +31,39 @@
  * USE OR OTHER DEALINGS IN THE SOFTWARE.
  *******************************************************************************/
 
-package org.geppetto.core.model;
+package org.geppetto.core.utilities;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * @author matteocantarelli
- * 
- */
-public class ModelWrapper extends AModel
-{
+import org.geppetto.core.data.model.AVariable;
+import org.geppetto.core.data.model.SimpleType;
+import org.geppetto.core.data.model.StructuredType;
 
-	Map<String, Object> _models;
-
-	public ModelWrapper(String id)
-	{
-		super(id);
-		_models = new HashMap<String, Object>();
-	}
-
-	public Object getModel(String id)
-	{
-		if(_models.containsKey(id))
-		{
-			return _models.get(id);
-		}
-		return null;
-	}
-
-	public void wrapModel(String id, Object model)
-	{
-		_models.put(id, model);
-	}
-
+public class VariablePathSerializer {
+ public static void GetFullVariablePath(AVariable var, String parentName, List<String> variablePaths)
+ {
+	 String varName = parentName.equals("")? var.getName() : (parentName + "." + var.getName());
+	 
+	 if(var.getType() instanceof StructuredType)
+	 {
+		 // NODE
+		 StructuredType strucT = (StructuredType)var.getType();
+		 List<AVariable> vars = strucT.getVariables();
+		 
+		 for(AVariable v : vars){
+			 GetFullVariablePath(v, varName, variablePaths);
+		 }
+	 }
+	 else if(var.getType() instanceof SimpleType)
+	 {
+		// LEAF
+		 if(variablePaths == null)
+		 {
+			 variablePaths = new ArrayList<String>();
+		 }
+		 
+		 variablePaths.add(varName); 
+	 }
+ }
 }
