@@ -69,8 +69,8 @@ public class LZ4CompressionTest
 		URL url = this.getClass().getResource(resource);
 		String model=new Scanner(url.openStream(), "UTF-8").useDelimiter("\\A").next();
 		long start=System.currentTimeMillis();
-	    String compressed=LZ4Compress.compressString(model);
-		System.out.println("Compressed in "+((long)System.currentTimeMillis()-start)+"ms. Original size:"+model.length()+" Compressed size:"+compressed.length());
+	    byte[] compressed=LZ4Compress.compressString(model);
+		System.out.println("Compressed in "+((long)System.currentTimeMillis()-start)+"ms. Original size:"+model.length()+" Compressed size:"+compressed.length);
 	}
 
 	

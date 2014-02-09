@@ -47,17 +47,14 @@ public class LZ4Compress
 
 	private static LZ4Factory _factory = LZ4Factory.fastestInstance();
 	
-	public static String compressString(String toCompress) throws UnsupportedEncodingException
+	public static byte[] compressString(String toCompress) throws UnsupportedEncodingException
 	{
 		
 	    byte[] data = toCompress.getBytes("UTF-8");
 	    final int decompressedLength = data.length;
 
 	    LZ4Compressor compressor = _factory.fastCompressor();
-	    int maxCompressedLength = compressor.maxCompressedLength(decompressedLength);
-	    byte[] compressed = new byte[maxCompressedLength];
-	    int compressedLength=compressor.compress(data, 0, decompressedLength, compressed, 0, maxCompressedLength);
-		return new String(Arrays.copyOf(compressed, compressedLength));
+		return compressor.compress(data, 0, decompressedLength);
 	}
 
 }
