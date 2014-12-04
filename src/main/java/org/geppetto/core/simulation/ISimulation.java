@@ -134,7 +134,7 @@ public interface ISimulation {
 	void clearWatchLists();
 	
 	/**
-	 * Gets existing watch lists  
+ 	 * Gets existing watch lists  
 	 * */
 	List<WatchList> getWatchLists();
 	
@@ -143,4 +143,6 @@ public interface ISimulation {
 	int getSimulationCapacity();
 
 	String getModelTree(String aspectID);
+	
+	String writeModel(String aspectID, String format);
 }

@@ -69,6 +69,12 @@ public class TestModelInterpreter implements IModelInterpreter
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	@Override
+	public boolean writeModel(AspectNode aspectNode, String format) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 	@Override
 	public String getName()
