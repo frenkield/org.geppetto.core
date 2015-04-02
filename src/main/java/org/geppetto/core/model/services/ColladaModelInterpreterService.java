@@ -44,6 +44,7 @@ import org.geppetto.core.model.IModelInterpreter;
 import org.geppetto.core.model.ModelInterpreterException;
 import org.geppetto.core.model.ModelWrapper;
 import org.geppetto.core.model.runtime.AspectNode;
+import org.geppetto.core.services.AService;
 import org.geppetto.core.services.IModelFormat;
 import org.geppetto.core.services.ModelFormat;
 import org.geppetto.core.services.registry.ServicesRegistry;
@@ -54,7 +55,7 @@ import org.springframework.stereotype.Service;
  * 
  */
 @Service
-public class ColladaModelInterpreterService implements IModelInterpreter
+public class ColladaModelInterpreterService extends AService implements IModelInterpreter
 {
 
 	@Override

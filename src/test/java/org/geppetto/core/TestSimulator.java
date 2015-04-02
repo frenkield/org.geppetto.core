@@ -45,6 +45,7 @@ import org.geppetto.core.services.IModelFormat;
 import org.geppetto.core.services.registry.ServicesRegistry;
 import org.geppetto.core.simulation.IRunConfiguration;
 import org.geppetto.core.simulation.ISimulatorCallbackListener;
+import org.geppetto.core.simulator.ASimulator;
 import org.geppetto.core.simulator.ISimulator;
 
 /**
@@ -53,7 +54,7 @@ import org.geppetto.core.simulator.ISimulator;
  * @author  Jesus R. Martinez (jesus@metacell.us)
  *
  */
-public class TestSimulator implements ISimulator
+public class TestSimulator extends ASimulator
 {
 
 	@Override

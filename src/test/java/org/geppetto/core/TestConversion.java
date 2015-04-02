@@ -37,7 +37,9 @@ import java.util.List;
 
 import org.geppetto.core.conversion.ConversionException;
 import org.geppetto.core.conversion.IConversion;
+import org.geppetto.core.features.IFeature;
 import org.geppetto.core.model.IModel;
+import org.geppetto.core.services.GeppettoFeature;
 import org.geppetto.core.services.IModelFormat;
 import org.geppetto.core.services.registry.ServicesRegistry;
 
@@ -81,6 +83,18 @@ public class TestConversion implements IConversion
 	@Override
 	public IModel convert(IModel model, IModelFormat input, IModelFormat output) throws ConversionException
 	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isSupported(GeppettoFeature feature) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public IFeature getFeature(GeppettoFeature feature) {
 		// TODO Auto-generated method stub
 		return null;
 	}

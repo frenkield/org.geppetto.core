@@ -39,8 +39,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.geppetto.core.model.AModelInterpreter;
 import org.geppetto.core.model.IModel;
-import org.geppetto.core.model.IModelInterpreter;
 import org.geppetto.core.model.ModelInterpreterException;
 import org.geppetto.core.model.ModelWrapper;
 import org.geppetto.core.model.runtime.AspectNode;
@@ -54,7 +54,7 @@ import org.springframework.stereotype.Service;
  * 
  */
 @Service
-public class OBJModelInterpreterService implements IModelInterpreter
+public class OBJModelInterpreterService extends AModelInterpreter
 {
 
 	@Override

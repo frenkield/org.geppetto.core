@@ -63,13 +63,14 @@ import org.geppetto.core.model.runtime.VariableNode;
 import org.geppetto.core.model.runtime.AspectSubTreeNode.AspectTreeType;
 import org.geppetto.core.model.values.AValue;
 import org.geppetto.core.model.values.ValuesFactory;
+import org.geppetto.core.services.AService;
 import org.geppetto.core.simulation.ISimulatorCallbackListener;
 
 /**
  * @author matteocantarelli
  * 
  */
-public abstract class ASimulator implements ISimulator
+public abstract class ASimulator extends AService implements ISimulator
 {
 
 	protected List<IModel> _models;
