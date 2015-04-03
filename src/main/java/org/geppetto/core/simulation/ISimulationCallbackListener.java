@@ -33,6 +33,7 @@
 
 package org.geppetto.core.simulation;
 
+import java.util.List;
 import org.geppetto.core.common.GeppettoErrorCodes;
 
 public interface ISimulationCallbackListener
@@ -44,6 +45,8 @@ public interface ISimulationCallbackListener
 	}
 	
 	void updateReady(SimulationEvents event, String requestID, String sceneUpdate);
+
+    void particleUpdateReady(SimulationEvents event, String requestID, List<Double> particles);
 
 	void error(GeppettoErrorCodes error, String classSource, String errorMessage, Exception e);
 
